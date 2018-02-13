@@ -1,0 +1,22 @@
+<div id="wrapper">
+
+    <h1>Listing 4 Dojos</h1>
+    
+    
+    <table>
+        <tr>
+            <th>Coding Dojo Branch</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+        <% @loc.each do |p| %>
+        <tr>
+            <td><%= p['branch'] %></td>
+            <td><%= p['street'] %></td>
+            <td><%= p['city'] %></td>
+            <td><%= p['state'] %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
