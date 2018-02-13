@@ -5,10 +5,19 @@
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
 }
+#form{
+    height: 300px;
+    width: 300px;
+    border:solid black 1px;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+    text-align: right;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin: 5px 5px;
 }
 
 td, th {

@@ -9,6 +9,7 @@
             <th>Street</th>
             <th>City</th>
             <th>State</th>
+            <th>Action</th>
         </tr>
         <% @loc.each do |p| %>
         <tr>
@@ -16,7 +17,9 @@
             <td><%= p['street'] %></td>
             <td><%= p['city'] %></td>
             <td><%= p['state'] %></td>
+            <td><a href="/dojos/<%=p['id']%>">Show</a> | <a href="/dojos/<%=p['id']%>/edit">Edit</a> | <a href="/dojos/<%=p['id']%>">Destroy</a></td>
         </tr>
         <% end %>
     </table>
+    <a href="/dojos/new">New Dojo</a>
 </div>
