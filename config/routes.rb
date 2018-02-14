@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 get '/dojos' => 'dojos#index'
 get '/dojos/new' => 'dojos#new'
 post '/dojos' => 'dojos#create'
+get '/dojos/:id' => 'dojos#show'
+get '/dojos/:id/edit' => 'dojos#edit'
+patch '/dojos/:id' => 'dojos#update'
+delete '/dojos/:id' => 'dojos#destroy'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

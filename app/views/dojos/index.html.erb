@@ -17,7 +17,7 @@
             <td><%= p['street'] %></td>
             <td><%= p['city'] %></td>
             <td><%= p['state'] %></td>
-            <td><a href="/dojos/<%=p['id']%>">Show</a> | <a href="/dojos/<%=p['id']%>/edit">Edit</a> | <a href="/dojos/<%=p['id']%>">Destroy</a></td>
+            <td><a href="/dojos/<%=p['id']%>">Show</a> | <a href="/dojos/<%=p['id']%>/edit">Edit</a> | <a href="/dojos/<%=p['id']%>" data-method="delete">Destroy</a></td>
         </tr>
         <% end %>
     </table>
