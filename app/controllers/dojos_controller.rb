@@ -14,7 +14,9 @@ class DojosController < ApplicationController
 
     def show
         @dojo = Dojo.find(params[:id])
-        render "show"
+        @students = Student.query
+        puts @students
+        render :show
     end
 
     def edit
@@ -35,5 +37,9 @@ class DojosController < ApplicationController
     private
     def dojo_params
         params.require(:dojo).permit(:branch, :street,:city, :state)
+    end
+
+    def self.students_of(num)
+      self.where("dojo_id = ?", num)
     end
 end

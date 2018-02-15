@@ -1,16 +1,26 @@
 Rails.application.routes.draw do
+
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-get '/dojos' => 'dojos#index'
-get '/dojos/new' => 'dojos#new'
-post '/dojos' => 'dojos#create'
-get '/dojos/:id' => 'dojos#show'
-get '/dojos/:id/edit' => 'dojos#edit'
-patch '/dojos/:id' => 'dojos#update'
-delete '/dojos/:id' => 'dojos#destroy'
+  get '/dojos' => 'dojos#index'
+  get '/dojos/new' => 'dojos#new'
+  post '/dojos' => 'dojos#create'
+  get '/dojos/:id' => 'dojos#show'
+  get '/dojos/:id/edit' => 'dojos#edit'
+  patch '/dojos/:id' => 'dojos#update'
+  delete '/dojos/:id' => 'dojos#destroy'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  
+  get 'dojos/:id/students/new' => "students#new"
+  post 'dojos/:id' => "students#create"
+  get 'dojos/:did/students/:sid' => "students#show"
+  delete 'dojos/:did/students/:sid' => "students#destroy"
+  get 'dojos/:did/students/:sid/edit' => "students#edit"
+  patch 'dojos/:did/students/:sid' => "students#update"
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

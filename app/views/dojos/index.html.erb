@@ -1,25 +1,29 @@
-<div id="wrapper">
+<div class="wrapper">
 
     <h1>Listing 4 Dojos</h1>
     
     
     <table>
-        <tr>
-            <th>Coding Dojo Branch</th>
-            <th>Street</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Action</th>
-        </tr>
-        <% @loc.each do |p| %>
-        <tr>
-            <td><%= p['branch'] %></td>
-            <td><%= p['street'] %></td>
-            <td><%= p['city'] %></td>
-            <td><%= p['state'] %></td>
-            <td><a href="/dojos/<%=p['id']%>">Show</a> | <a href="/dojos/<%=p['id']%>/edit">Edit</a> | <a href="/dojos/<%=p['id']%>" data-method="delete">Destroy</a></td>
-        </tr>
-        <% end %>
+        <thead>
+            <tr>
+                <th>Coding Dojo Branch</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>    
+            <% @loc.each do |p| %>
+            <tr>
+                <td><%= p['branch'] %></td>
+                <td><%= p['street'] %></td>
+                <td><%= p['city'] %></td>
+                <td><%= p['state'] %></td>
+                <td><a href="/dojos/<%=p['id']%>">Show</a> | <a href="/dojos/<%=p['id']%>/edit">Edit</a> | <a href="/dojos/<%=p['id']%>" data-method="delete">Destroy</a></td>
+            </tr>
+            <% end %>
+        </tbody>
     </table>
     <a href="/dojos/new">New Dojo</a>
 </div>

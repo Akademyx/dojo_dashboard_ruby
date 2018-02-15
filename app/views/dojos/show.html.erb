@@ -1,7 +1,37 @@
-<h1><%= @dojo[:branch] %> Dojo</h1>
-<p>Address: <%= @dojo[:street] %></p>
-<p>City: <%= @dojo[:city] %></p>
-<p>State: <%= @dojo[:state] %></p>
-
-<a href="/dojos">Home</a>
-<a href="/dojos/<%=@dojo[:id]%>/edit">Edit</a>
+<div class="wrapper">
+    
+    <h1><%= @dojo[:branch] %> Dojo
+        <a href="/dojos/<%=@dojo[:id]%>/edit">Edit</a>
+    </h1>
+    <p>Address: <%= @dojo[:street] %></p>
+    <p>City: <%= @dojo[:city] %></p>
+    <p>State: <%= @dojo[:state] %></p>
+    
+    <h2>Student Roster</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  @students.each do |s| %>
+            <tr>
+                <td><%= s['first_name'] %></td>
+                <td><%= s['last_name'] %></td>
+                <td><%= s['email'] %></td>
+                <td><a href='/dojos/<%=@dojo[:id]%>/students/<%= s[:id] %>'>Show</a> | <a href='/dojos/
+                <%=@dojo[:id]%>/students/<%= s[:id] %>/edit'>Edit</a> | <a href='/dojos/<%=@dojo[:id]%>/students/<%= s[:id] %>' data-method="delete">Destroy</a></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <p>
+        <a href="/dojos">Home</a>
+        <a href="/dojos/<%=@dojo[:id]%>/students/new">Add Student</a>
+    </p>
+        
+</div>

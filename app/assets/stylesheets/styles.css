@@ -1,9 +1,12 @@
-#wrapper{
+.wrapper{
     height: 500px;
     width: 800px;
     border:solid black 1px;
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
+}
+thead{
+    background-color: orange;
 }
 #form{
     height: 300px;
